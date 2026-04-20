@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: theme('colors.surface.800');
+  }
+
+  html {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-950 text-surface-200 min-h-screen;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-surface-500;
+  }
+
+  /* Input base reset */
+  input, textarea, select {
+    @apply outline-none;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-900 border border-surface-800 rounded-xl;
+  }
+
+  .input-base {
+    @apply w-full bg-surface-900 border border-surface-800 rounded-lg px-3 py-2.5
+           text-sm text-surface-200 placeholder-surface-500
+           focus:border-primary focus:ring-1 focus:ring-primary/30
+           transition-colors duration-150;
+  }
+
+  .input-error {
+    @apply border-red-500/50 focus:border-red-500 focus:ring-red-500/20;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-white font-medium rounded-lg
+           px-4 py-2.5 text-sm transition-colors duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-primary/40;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-800 hover:bg-surface-700 text-surface-200 font-medium rounded-lg
+           px-4 py-2.5 text-sm transition-colors duration-150
+           focus:outline-none focus:ring-2 focus:ring-slate-600;
+  }
+
+  .btn-ghost {
+    @apply text-surface-400 hover:text-surface-200 hover:bg-surface-800 font-medium rounded-lg
+           px-3 py-2 text-sm transition-colors duration-150;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-500 text-white font-medium rounded-lg
+           px-4 py-2.5 text-sm transition-colors duration-150;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-surface-400 mb-1.5;
+  }
+
+  .section-title {
+    @apply text-lg font-semibold text-surface-200;
+  }
+
+  .page-title {
+    @apply text-2xl font-semibold text-surface-200;
+  }
+
+  .stat-number {
+    @apply text-3xl font-semibold text-surface-200 tabular-nums;
+  }
+}
