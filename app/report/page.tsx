@@ -11,7 +11,7 @@ export default function ReportPage() {
     <div className="min-h-screen bg-surface-950">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-surface-950/95 backdrop-blur-sm border-b border-surface-800">
-        <div className="max-w-lg mx-auto px-4 h-14 flex items-center justify-between">
+        <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-1.5 text-surface-400 hover:text-surface-200 transition-colors">
             <ArrowLeft className="w-4 h-4" />
             <span className="text-sm">Back</span>
