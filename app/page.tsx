@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import { AlertTriangle, BarChart2, Shield, Clock, MapPin, CheckCircle } from 'lucide-react'
+import { GlobeBackground } from '@/components/ui/GlobeBackground'
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-surface-950 flex flex-col">
+    <div className="min-h-screen bg-surface-950 flex flex-col relative">
+      <GlobeBackground />
+
       {/* Header */}
-      <header className="border-b border-surface-800 bg-surface-900/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="border-b border-surface-800 bg-surface-950/70 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
@@ -16,17 +19,14 @@ export default function LandingPage() {
               <p className="text-xs text-surface-500 leading-tight hidden sm:block">Motor Traffic & Transport Department</p>
             </div>
           </div>
-          <Link
-            href="/dashboard"
-            className="btn-ghost text-xs sm:text-sm"
-          >
+          <Link href="/dashboard" className="btn-ghost text-xs sm:text-sm">
             Officer Portal →
           </Link>
         </div>
       </header>
 
       {/* Hero */}
-      <main className="flex-1">
+      <main className="flex-1 relative z-10">
         <section className="max-w-6xl mx-auto px-4 sm:px-6 pt-16 pb-12 sm:pt-24 sm:pb-20">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-3 py-1 mb-6">
@@ -83,7 +83,7 @@ export default function LandingPage() {
                 desc: 'Get a reference ID immediately after submitting your report.',
               },
             ].map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="card p-5">
+              <div key={title} className="card p-5 bg-surface-900/80 backdrop-blur-sm">
                 <div className="w-9 h-9 bg-primary/10 border border-primary/20 rounded-lg flex items-center justify-center mb-3">
                   <Icon className="w-4 h-4 text-primary" />
                 </div>
@@ -95,7 +95,7 @@ export default function LandingPage() {
         </section>
       </main>
 
-      <footer className="border-t border-surface-800 py-6">
+      <footer className="border-t border-surface-800 py-6 relative z-10">
         <p className="text-center text-xs text-surface-500">
           © {new Date().getFullYear()} Ghana Motor Traffic & Transport Department · MTTD Online
         </p>

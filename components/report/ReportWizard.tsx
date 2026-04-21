@@ -147,7 +147,7 @@ export function ReportWizard() {
   }
 
   return (
-    <div className="max-w-lg mx-auto w-full">
+    <div className="max-w-2xl mx-auto w-full">
       {/* Progress */}
       <div className="px-4 sm:px-0 pt-4 pb-6">
         <Stepper steps={STEPS} current={step} />
@@ -164,7 +164,7 @@ export function ReportWizard() {
 
       {/* Sticky bottom nav */}
       <div className="fixed bottom-0 left-0 right-0 bg-surface-950/95 backdrop-blur-sm border-t border-surface-800 px-4 py-4 z-50">
-        <div className="max-w-lg mx-auto flex items-center gap-3">
+        <div className="max-w-2xl mx-auto flex items-center gap-3">
           {step > 0 && (
             <button type="button" onClick={back} className="btn-secondary flex items-center gap-1.5">
               <ChevronLeft className="w-4 h-4" />
